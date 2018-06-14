@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
     // TODO: Steps 4 & 8 - Declare member variables here:
     TextView mStoryTextView;
     Button mAns1Button, mAns2Button;
-    int mIndex = 1;
+    int mIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         mStoryTextView = (TextView) findViewById(R.id.storyTextView);
         mAns1Button = (Button) findViewById(R.id.buttonTop);
         mAns2Button = (Button) findViewById(R.id.buttonBottom);
+        mIndex = 1;
 
         // TODO: Steps 6, 7, & 9 - Set a listener on the top button:
         mAns1Button.setOnClickListener(new View.OnClickListener() {
@@ -30,12 +31,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (mIndex <= 2) {
                     mIndex = 3;
-                    mStoryTextView.setText(getString(R.string.T3_Story));
-                    mAns1Button.setText(getString(R.string.T3_Ans1));
-                    mAns2Button.setText(getString(R.string.T3_Ans2));
+                    mStoryTextView.setText(R.string.T3_Story);
+                    mAns1Button.setText(R.string.T3_Ans1);
+                    mAns2Button.setText(R.string.T3_Ans2);
                 } else {
                     mIndex = 6;
-                    mStoryTextView.setText(getString(R.string.T6_End));
+                    mStoryTextView.setText(R.string.T6_End);
                     mAns1Button.setVisibility(View.INVISIBLE);
                     mAns2Button.setVisibility(View.INVISIBLE);
                     mAns1Button.setClickable(false);
@@ -50,19 +51,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (mIndex == 1) {
                     mIndex = 2;
-                    mStoryTextView.setText(getString(R.string.T2_Story));
-                    mAns1Button.setText(getString(R.string.T2_Ans1));
-                    mAns2Button.setText(getString(R.string.T2_Ans2));
+                    mStoryTextView.setText(R.string.T2_Story);
+                    mAns1Button.setText(R.string.T2_Ans1);
+                    mAns2Button.setText(R.string.T2_Ans2);
                 } else if (mIndex == 2) {
                     mIndex = 4;
-                    mStoryTextView.setText(getString(R.string.T4_End));
+                    mStoryTextView.setText(R.string.T4_End);
                     mAns1Button.setVisibility(View.INVISIBLE);
                     mAns2Button.setVisibility(View.INVISIBLE);
                     mAns1Button.setClickable(false);
                     mAns2Button.setClickable(false);
                 } else {
                     mIndex = 5;
-                    mStoryTextView.setText(getString(R.string.T5_End));
+                    mStoryTextView.setText(R.string.T5_End);
                     mAns1Button.setVisibility(View.INVISIBLE);
                     mAns2Button.setVisibility(View.INVISIBLE);
                     mAns1Button.setClickable(false);
